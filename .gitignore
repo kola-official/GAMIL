@@ -1,0 +1,49 @@
+# Python/runtime
+__pycache__/
+*.py[cod]
+*.log
+logs/
+outputs/
+work*/
+.tmux-*.log
+
+# Local-only data and model indexes
+raw_data/local_sources/
+benchmark/local_data/
+processed_data/realm_rank_v4/local/
+processed_data/realm_rank_v4/*.fasta
+processed_data/realm_rank_v4/*.fasta.gz
+processed_data/realm_rank_v4/train_csv/
+processed_data/realm_rank_v4/train_csv_smoke/
+processed_data/realm_rank_test_v4
+model/local_models/
+checkpoint/local_checkpoints/
+
+# Large generated artifacts
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.arrow
+*.npy
+*.npz
+*.sqlite
+*.fasta
+*.fasta.gz
+*.fa
+*.fa.gz
+*.fna
+*.fna.gz
+*.faa
+*.csv.tmp
+*.gz.tmp
+
+# Keep lightweight summaries and manifests trackable
+!README.md
+!environment.yml
+!docs/**
+!raw_data/manifest.tsv
+!processed_data/realm_rank_v4/manifest.tsv
+!model/manifest.tsv
+!checkpoint/manifest.tsv
+!**/results/**

@@ -1,0 +1,2 @@
+source_dir	virus_sha256	reused_files
+processed_data/realm_rank_v3	5c27028d60be164e7ecb9ffb7c998ebcb112af6b1cd1879f33d7a847e3e3b2ed	nonviral_vs_virus.tsv,nonviral_virus_intervals.tsv,nonviral_cleaned.fasta,nonviral_decontamination.tsv,nonviral_decontamination_contigs.tsv

@@ -1,0 +1,11 @@
+entry	local_link	source_path	use	github_upload
+virus_nuccore	raw_data/local_sources/virus/nuccore	/share/home/user/snliu/hybriDNA/viralm-r/data/virus/nuccore	viral source FASTA batches used by Realm-Rank v4	no
+bacteria_assemblies	raw_data/local_sources/bacteria/assemblies	/share/home/user/snliu/hybriDNA/viralm-r/data/bacteria/assemblies	nonviral source assemblies	no
+archaea_assemblies	raw_data/local_sources/archaea/assemblies	/share/home/user/snliu/hybriDNA/viralm-r/data/archaea/assemblies	nonviral source assemblies	no
+fungi_assemblies	raw_data/local_sources/fungi/assemblies	/share/home/user/snliu/hybriDNA/viralm-r/data/fungi/assemblies	nonviral eukaryote source assemblies	no
+plasmid_nuccore	raw_data/local_sources/plasmid/nuccore	/share/home/user/snliu/hybriDNA/viralm-r/data/plasmid/nuccore	nonviral plasmid source FASTA batches	no
+protozoa_nuccore	raw_data/local_sources/protozoa/nuccore	/share/home/user/snliu/hybriDNA/viralm-r/data/protozoa/nuccore	nonviral protozoa source FASTA batches	no
+insect_assemblies	raw_data/local_sources/insect/assemblies	/share/home/user/snliu/hybriDNA/viralm-r/data/insect/assemblies	strict Insecta assemblies	no
+insect_raw	raw_data/local_sources/insect/raw	/share/home/user/snliu/hybriDNA/viralm-r/data/insect/raw	download cache for strict Insecta preparation	no
+reference_human	raw_data/local_sources/reference/human_GRCh38.p14	/share/home/user/snliu/hybriDNA/viralm-r/data/reference/human_GRCh38.p14	euk/pro v4 human reference source	no
+reference_bat	raw_data/local_sources/reference/bat_Rhinolophus_ferrumequinum	/share/home/user/snliu/hybriDNA/viralm-r/data/reference/bat_Rhinolophus_ferrumequinum	euk/pro v4 bat reference source	no

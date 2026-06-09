@@ -1,0 +1,12 @@
+check	passed	detail
+case_count_ga_rescued_positive	1	genomes=33, records=253
+case_count_ga_corrected_negative	1	genomes=280, records=359
+case_count_ga_worse	1	genomes=111, records=953
+case_count_both_correct_pool	1	genomes=3580
+selected_fasta_checksum	1	records=3300
+attention_sums	1	genomes=848 max_abs_error=1.05239459813e-07
+merged_has_record_id	1	records=3300
+merged_row_count	1	merged=3300 case=3300
+genomad_na_or_values	1	geNomad missing records retained as NA/0
+summary_tables_nonempty	1	files=7
+figures_nonempty	1	files=4

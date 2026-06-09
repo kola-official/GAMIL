@@ -1,0 +1,3 @@
+reason	split	supergroup	fragments_before	bp_before	fragments_after	bp_after	fragments_dropped	bp_dropped
+dev_post_blast_binary_bp_balance	dev	virus	16440	18074953	16440	18074953	0	0
+dev_post_blast_binary_bp_balance	dev	nonvirus	33792	37883483	16373	18017126	17419	19866357

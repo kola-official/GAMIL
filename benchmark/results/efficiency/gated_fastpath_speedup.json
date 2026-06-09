@@ -1,0 +1,23 @@
+[
+  {
+    "model": "viralm-r-12l-gated-mil",
+    "slow_elapsed_sec": 100.5323212146759,
+    "fast_elapsed_sec": 90.58395767211914,
+    "speedup_x": 1.1098247835291786,
+    "delta_sec": 9.948363542556763
+  },
+  {
+    "model": "viralm-r-6l-gated-mil",
+    "slow_elapsed_sec": 68.28325986862183,
+    "fast_elapsed_sec": 58.551692724227905,
+    "speedup_x": 1.1662047106004012,
+    "delta_sec": 9.731567144393921
+  },
+  {
+    "model": "viralm-o-6l-gated-mil",
+    "slow_elapsed_sec": 76.72215962409973,
+    "fast_elapsed_sec": 65.33981919288635,
+    "speedup_x": 1.1742022027580479,
+    "delta_sec": 11.382340431213379
+  }
+]

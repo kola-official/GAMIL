@@ -1,0 +1,5 @@
+check	status	details
+insect_txt_count_matches_selected	pass	insect_txt=6 selected=6
+selected_genus_unique	pass	{}
+selected_have_chromosome_records	pass	
+filtered_fasta_gzip_valid	pass	

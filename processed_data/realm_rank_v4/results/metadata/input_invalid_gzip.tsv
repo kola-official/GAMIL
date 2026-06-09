@@ -1,0 +1,4 @@
+source	path	error
+bacteria	data/bacteria/assemblies/GCF_003925935.1_ASM392593v1_genomic.fna.gz	Compressed file ended before the end-of-stream marker was reached
+bacteria	data/bacteria/assemblies/GCF_004683965.1_ASM468396v1_genomic.fna.gz	Compressed file ended before the end-of-stream marker was reached
+fungi	data/fungi/assemblies/GCF_000184455.2_ASM18445v3_genomic.fna.gz	Compressed file ended before the end-of-stream marker was reached

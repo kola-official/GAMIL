@@ -1,0 +1,282 @@
+{
+  "actual_total_bp": 779308751,
+  "actual_total_fragments": 697583,
+  "blast_removed": {
+    "dev_vs_train": 24498,
+    "test_vs_train_dev": 24809
+  },
+  "requested_dev_fraction": 0.1,
+  "requested_test_fraction": 0.1,
+  "splits": {
+    "dev": {
+      "bp": 36092079,
+      "bp_fraction": 0.04631293945267143,
+      "fragment_fraction": 0.047038130229664424,
+      "fragments": 32813,
+      "length_bins": {
+        "1000": {
+          "nonvirus": 871,
+          "virus": 874
+        },
+        "1100": {
+          "nonvirus": 899,
+          "virus": 905
+        },
+        "1200": {
+          "nonvirus": 935,
+          "virus": 935
+        },
+        "1300": {
+          "nonvirus": 864,
+          "virus": 867
+        },
+        "1400": {
+          "nonvirus": 876,
+          "virus": 877
+        },
+        "1500": {
+          "nonvirus": 923,
+          "virus": 925
+        },
+        "1600": {
+          "nonvirus": 894,
+          "virus": 897
+        },
+        "1700": {
+          "nonvirus": 884,
+          "virus": 888
+        },
+        "1800": {
+          "nonvirus": 878,
+          "virus": 881
+        },
+        "1900": {
+          "nonvirus": 886,
+          "virus": 888
+        },
+        "2000": {
+          "nonvirus": 6,
+          "virus": 10
+        },
+        "300": {
+          "nonvirus": 1416,
+          "virus": 1430
+        },
+        "400": {
+          "nonvirus": 1140,
+          "virus": 1149
+        },
+        "500": {
+          "nonvirus": 1042,
+          "virus": 1044
+        },
+        "600": {
+          "nonvirus": 1008,
+          "virus": 1010
+        },
+        "700": {
+          "nonvirus": 982,
+          "virus": 985
+        },
+        "800": {
+          "nonvirus": 932,
+          "virus": 937
+        },
+        "900": {
+          "nonvirus": 937,
+          "virus": 938
+        }
+      },
+      "supergroups": {
+        "nonvirus": {
+          "bp": 18017126,
+          "fragments": 16373
+        },
+        "virus": {
+          "bp": 18074953,
+          "fragments": 16440
+        }
+      }
+    },
+    "test": {
+      "bp": 45446994,
+      "bp_fraction": 0.058317058472246004,
+      "fragment_fraction": 0.058674021585961814,
+      "fragments": 40930,
+      "length_bins": {
+        "1000": {
+          "nonvirus": 1150,
+          "virus": 1153
+        },
+        "1100": {
+          "nonvirus": 1205,
+          "virus": 1205
+        },
+        "1200": {
+          "nonvirus": 1139,
+          "virus": 1140
+        },
+        "1300": {
+          "nonvirus": 1118,
+          "virus": 1121
+        },
+        "1400": {
+          "nonvirus": 1159,
+          "virus": 1164
+        },
+        "1500": {
+          "nonvirus": 1163,
+          "virus": 1165
+        },
+        "1600": {
+          "nonvirus": 1024,
+          "virus": 1026
+        },
+        "1700": {
+          "nonvirus": 1122,
+          "virus": 1124
+        },
+        "1800": {
+          "nonvirus": 1140,
+          "virus": 1143
+        },
+        "1900": {
+          "nonvirus": 1124,
+          "virus": 1129
+        },
+        "2000": {
+          "nonvirus": 11,
+          "virus": 12
+        },
+        "300": {
+          "nonvirus": 1611,
+          "virus": 1618
+        },
+        "400": {
+          "nonvirus": 1348,
+          "virus": 1350
+        },
+        "500": {
+          "nonvirus": 1318,
+          "virus": 1324
+        },
+        "600": {
+          "nonvirus": 1255,
+          "virus": 1258
+        },
+        "700": {
+          "nonvirus": 1224,
+          "virus": 1228
+        },
+        "800": {
+          "nonvirus": 1155,
+          "virus": 1156
+        },
+        "900": {
+          "nonvirus": 1172,
+          "virus": 1176
+        }
+      },
+      "supergroups": {
+        "nonvirus": {
+          "bp": 22696453,
+          "fragments": 20438
+        },
+        "virus": {
+          "bp": 22750541,
+          "fragments": 20492
+        }
+      }
+    },
+    "train": {
+      "bp": 697769678,
+      "bp_fraction": 0.8953700020750825,
+      "fragment_fraction": 0.8942878481843738,
+      "fragments": 623840,
+      "length_bins": {
+        "1000": {
+          "nonvirus": 18262,
+          "virus": 18268
+        },
+        "1100": {
+          "nonvirus": 17903,
+          "virus": 17910
+        },
+        "1200": {
+          "nonvirus": 17580,
+          "virus": 17589
+        },
+        "1300": {
+          "nonvirus": 17542,
+          "virus": 17546
+        },
+        "1400": {
+          "nonvirus": 17506,
+          "virus": 17511
+        },
+        "1500": {
+          "nonvirus": 17456,
+          "virus": 17461
+        },
+        "1600": {
+          "nonvirus": 17321,
+          "virus": 17320
+        },
+        "1700": {
+          "nonvirus": 17140,
+          "virus": 17142
+        },
+        "1800": {
+          "nonvirus": 17267,
+          "virus": 17271
+        },
+        "1900": {
+          "nonvirus": 17093,
+          "virus": 17101
+        },
+        "2000": {
+          "nonvirus": 144,
+          "virus": 145
+        },
+        "300": {
+          "nonvirus": 22679,
+          "virus": 22800
+        },
+        "400": {
+          "nonvirus": 20101,
+          "virus": 20122
+        },
+        "500": {
+          "nonvirus": 19596,
+          "virus": 19611
+        },
+        "600": {
+          "nonvirus": 18867,
+          "virus": 18891
+        },
+        "700": {
+          "nonvirus": 18741,
+          "virus": 18748
+        },
+        "800": {
+          "nonvirus": 18334,
+          "virus": 18329
+        },
+        "900": {
+          "nonvirus": 18273,
+          "virus": 18270
+        }
+      },
+      "supergroups": {
+        "nonvirus": {
+          "bp": 348857870,
+          "fragments": 311805
+        },
+        "virus": {
+          "bp": 348911808,
+          "fragments": 312035
+        }
+      }
+    }
+  }
+}

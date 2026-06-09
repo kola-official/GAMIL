@@ -1,0 +1,9 @@
+case_group	claim	evidence_level	effect	p_value	genomes_tested
+both_correct_control	top-attention records enriched for viral_marker_density	negative finding	-0.10236284463424469	0.10727652396367456	158
+both_correct_control	top-attention records enriched for marker_enrichment	negative finding	-0.12476807816679873	0.14046063696125813	158
+ga_corrected_negative	top-attention records enriched for viral_marker_density	negative finding	0.013066520585328116	0.97796630859375	54
+ga_corrected_negative	top-attention records enriched for marker_enrichment	negative finding	0.038506835218636466	0.7151329666376114	54
+ga_rescued_positive	top-attention records enriched for viral_marker_density	strong evidence	0.27259590957065394	0.00823211669921875	30
+ga_rescued_positive	top-attention records enriched for marker_enrichment	strong evidence	0.2769652509432812	0.00823211669921875	30
+ga_worse	top-attention records enriched for viral_marker_density	negative finding	0.039032215673945346	0.8917533789053778	78
+ga_worse	top-attention records enriched for marker_enrichment	negative finding	0.03268209368833822	0.8539820165033121	78

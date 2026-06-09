@@ -1,0 +1,7 @@
+reason	split	supergroup	fragments_before	bp_before	fragments_after	bp_after	fragments_dropped	bp_dropped
+initial_binary_bp_balance	train	virus	312035	348911808	312035	348911808	0	0
+initial_binary_bp_balance	train	nonvirus	10134118	11479614668	311805	348857870	9822313	11130756798
+initial_binary_bp_balance	dev	virus	37402	41807073	37402	41807073	0	0
+initial_binary_bp_balance	dev	nonvirus	1242348	1406586203	37328	41743098	1205020	1364843105
+initial_binary_bp_balance	test	virus	41186	46280757	41186	46280757	0	0
+initial_binary_bp_balance	test	nonvirus	1198620	1356822715	41121	46215794	1157499	1310606921

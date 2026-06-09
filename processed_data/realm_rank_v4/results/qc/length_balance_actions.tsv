@@ -1,0 +1,4 @@
+split	initial_max_abs_bin_delta	fragments_dropped	status
+train	0.00604168	0	not_needed
+dev	0.00901328	0	not_needed
+test	0.00496712	0	not_needed

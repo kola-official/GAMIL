@@ -1,0 +1,60 @@
+{
+  "aggregation": "source_id=genome",
+  "counts": {
+    "fragments": 40930,
+    "genomes": 4085,
+    "nonviral_fragments": 20438,
+    "viral_fragments": 20492
+  },
+  "model_count": 8,
+  "models": [
+    {
+      "model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/eval/eval_euk_pro_o_vs_r/work_v4/staged_models/viralm-o",
+      "model_kind": "meanpool",
+      "model_name": "viralm_o"
+    },
+    {
+      "model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/eval/eval_euk_pro_o_vs_r/work_v4/staged_models/viralm-r",
+      "model_kind": "meanpool",
+      "model_name": "viralm_r_v4_final"
+    },
+    {
+      "model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_o_6l_meanpool_kd",
+      "model_kind": "meanpool",
+      "model_name": "viralm_o_6l_meanpool_kd"
+    },
+    {
+      "model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_r_v4_final_6l_meanpool_kd",
+      "model_kind": "meanpool",
+      "model_name": "viralm_r_v4_final_6l_meanpool_kd"
+    },
+    {
+      "model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_o_6l_gated_mil_kd",
+      "model_kind": "mil",
+      "model_name": "viralm_o_6l_gated_mil_kd"
+    },
+    {
+      "model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_r_v4_final_6l_gated_mil_kd",
+      "model_kind": "mil",
+      "model_name": "viralm_r_v4_final_6l_gated_mil_kd"
+    },
+    {
+      "model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_o_12l_gated_mil",
+      "model_kind": "mil",
+      "model_name": "viralm_o_12l_gated_mil"
+    },
+    {
+      "model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_r_v4_final_12l_gated_mil",
+      "model_kind": "mil",
+      "model_name": "viralm_r_v4_final_12l_gated_mil"
+    }
+  ],
+  "outputs": {
+    "test_metrics_by_label_group": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/benchmark/test_metrics_by_label_group.csv",
+    "test_metrics_by_model": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/benchmark/test_metrics_by_model.csv",
+    "test_metrics_by_source": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/benchmark/test_metrics_by_source.csv",
+    "test_predictions": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/benchmark/test_predictions"
+  },
+  "test_fasta": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/processed_data/realm_rank_v4/test.fasta.gz",
+  "threshold": 0.5
+}

@@ -1,0 +1,6 @@
+entry	local_link	source_path	use	github_upload
+realm_rank_v4_train_fasta	processed_data/realm_rank_v4/train.fasta.gz	/share/home/user/snliu/hybriDNA/viralm-r/processed_data/realm_rank_v4/train.fasta.gz	final strict train FASTA	no
+realm_rank_v4_dev_fasta	processed_data/realm_rank_v4/dev.fasta.gz	/share/home/user/snliu/hybriDNA/viralm-r/processed_data/realm_rank_v4/dev.fasta.gz	final strict dev FASTA	no
+realm_rank_v4_test_fasta	processed_data/realm_rank_v4/test.fasta.gz	/share/home/user/snliu/hybriDNA/viralm-r/processed_data/realm_rank_v4/test.fasta.gz	final strict held-out test FASTA	no
+realm_rank_v4_train_csv	processed_data/realm_rank_v4/train_csv	/share/home/user/snliu/hybriDNA/viralm-r/processed_data/realm_rank_v4/train_csv	train/dev CSV and token cache root	no
+realm_rank_test_v4_suite	processed_data/realm_rank_test_v4	/share/home/user/snliu/hybriDNA/viralm-r/processed_data/realm_rank_test_v4	fixed-length euk/pro benchmark FASTA suite	no

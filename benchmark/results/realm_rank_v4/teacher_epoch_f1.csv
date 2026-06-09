@@ -1,0 +1,11 @@
+model_name,epoch,val_loss,seq_f1,precision,recall,source_log
+viralm-o,1,,,,,
+viralm-o,2,,,,,
+viralm-o,3,,,,,
+viralm-o,4,,,,,
+viralm-o,5,,,,,
+viralm-r,1,0.284916,0.837532,0.750164,0.947934,${LOCAL_USER_ROOT}/hybriDNA/viralm-r/logs/train_20260604_165614.log
+viralm-r,2,0.297663,0.836010,0.762781,0.924793,${LOCAL_USER_ROOT}/hybriDNA/viralm-r/logs/train_20260604_165614.log
+viralm-r,3,0.279063,0.846807,0.765177,0.947934,${LOCAL_USER_ROOT}/hybriDNA/viralm-r/logs/train_20260604_165614.log
+viralm-r,4,0.309227,0.859940,0.789765,0.943802,${LOCAL_USER_ROOT}/hybriDNA/viralm-r/logs/train_20260604_165614.log
+viralm-r,5,0.335808,0.865152,0.798601,0.943802,${LOCAL_USER_ROOT}/hybriDNA/viralm-r/logs/train_20260604_165614.log

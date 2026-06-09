@@ -1,0 +1,6 @@
+case_group	genomes	records	positive_records	negative_records
+both_correct_control	424	1735	746	989
+ga_corrected_negative	280	359	0	359
+ga_rescued_positive	33	253	253	0
+ga_worse	111	953	490	463
+both_correct_pool	3580			

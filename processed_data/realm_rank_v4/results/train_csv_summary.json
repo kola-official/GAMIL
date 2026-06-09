@@ -1,0 +1,55 @@
+{
+  "batch_size": 4096,
+  "dev_csv": "processed_data/realm_rank_v4/train_csv/dev.csv",
+  "dev_fasta": "processed_data/realm_rank_v4/dev.fasta.gz",
+  "elapsed_sec": 21.018383502960205,
+  "genome_label_conflicts": 0,
+  "genome_train_dev_intersection": 0,
+  "genomes_by_split": {
+    "dev": 3782,
+    "train": 50420
+  },
+  "length_by_split": {
+    "dev": {
+      "max": 2000,
+      "mean": 1099.932313412367,
+      "min": 300
+    },
+    "train": {
+      "max": 2000,
+      "mean": 1118.507434598615,
+      "min": 300
+    }
+  },
+  "mode": "fixed_split",
+  "num_workers": 16,
+  "output_dir": "processed_data/realm_rank_v4/train_csv",
+  "rows_by_label": {
+    "0": 328178,
+    "1": 328475
+  },
+  "rows_by_label_split": {
+    "0:dev": 16373,
+    "0:train": 311805,
+    "1:dev": 16440,
+    "1:train": 312035
+  },
+  "rows_by_source": {
+    "archaea": 54703,
+    "bacteria": 54692,
+    "fungi": 54675,
+    "insect": 54692,
+    "plasmid": 54705,
+    "protozoa": 54711,
+    "virus": 328475
+  },
+  "rows_by_split": {
+    "dev": 32813,
+    "train": 623840
+  },
+  "total_seen": 656653,
+  "total_written": 656653,
+  "train_csv": "processed_data/realm_rank_v4/train_csv/train.csv",
+  "train_fasta": "processed_data/realm_rank_v4/train.fasta.gz",
+  "used_pigz": true
+}

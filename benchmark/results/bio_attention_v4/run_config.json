@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-06-07 23:31:00",
+  "ga_model_dir": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_r_v4_final_12l_gated_mil",
+  "ga_predictions": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/benchmark/test_predictions/viralm_r_v4_final_12l_gated_mil.csv",
+  "mp_predictions": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/benchmark/test_predictions/viralm_r_v4_final.csv",
+  "test_fasta": "${LOCAL_USER_ROOT}/hybriDNA/viralm-r/processed_data/realm_rank_v4/test.fasta.gz",
+  "threads": 56,
+  "threshold": 0.5
+}

@@ -1,0 +1,20 @@
+check	status	detail
+viral_realms_in_target_set	pass	Duplodnaviria,Riboviria,SmallRealm,Varidnaviria
+bacteria_selected_per_genus_le_2	pass	{}
+insect_selected_per_genus_le_1	pass	{}
+genome_not_cross_split	pass	[]
+final_fragment_lengths_in_range	pass	300-2000
+train_has_both_binary_classes	pass	
+train_binary_fragment_count_ratio_ge_0.90	pass	0.999263
+train_binary_bp_ratio_ge_0.90	pass	0.999845
+dev_has_both_binary_classes	pass	
+dev_binary_fragment_count_ratio_ge_0.90	pass	0.995925
+dev_binary_bp_ratio_ge_0.90	pass	0.996801
+test_has_both_binary_classes	pass	
+test_binary_fragment_count_ratio_ge_0.90	pass	0.997365
+test_binary_bp_ratio_ge_0.90	pass	0.997623
+removed_dev_fragments_not_selected	pass	0
+removed_test_fragments_not_selected	pass	0
+dev_train_coverage_filter_applied	pass	removed=24498 max_removed_coverage=1 threshold=0.5
+test_train_dev_coverage_filter_applied	pass	removed=24809 max_removed_coverage=1 threshold=0.5
+insect_manifest_present	pass	data/insect/insect.txt
