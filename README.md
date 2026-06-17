@@ -1,64 +1,172 @@
 # GAMIL
 
-GAMIL is the trimmed Realm-Rank v4 workspace for the final ViraLM-R/GAMIL experiments. The repository body keeps lightweight source code, build instructions, result summaries, and manifests. Large local data, model weights, and checkpoints are indexed through manifest rows, with only file-level symlinks kept in-tree where they do not cause recursive scans.
+GAMIL is a genome-level viral sequence identification framework built on
+transformer sequence encoders and gated-attention multiple-instance learning.
+This repository contains the code, lightweight benchmark summaries, and release
+manifests needed to reproduce the reported experiments. Large sequence files
+and trained weights are distributed separately as release assets.
 
-## Scope
+Chinese documentation is available in `README.zh-CN.md`.
 
-- Main dataset: `processed_data/realm_rank_v4` only. This is the strict final dataset.
-- Excluded datasets and code paths: older Realm-Rank v2/v3 intermediates, ViraLM official text datasets, old ViraLM-MIL/disViralm scripts, and all IMGVR/Prodigal benchmark/data paths.
-- Uploaded content: source scripts, documentation, manifests, and small metrics/QC summaries.
-- Local-only content: FASTA/CSV training data, token caches, model weights, checkpoint directories, and large prediction files.
-
-## Layout
+## Repository Layout
 
 ```text
 GAMIL/
-  raw_data/          raw-source preparation scripts, summaries, and local source manifest
-  process_data/      Realm-Rank v4 builders and CSV/test-suite preparation scripts
-  processed_data/    Realm-Rank v4 summary results plus local file links
-  train/             ViraLM-R training launcher and script
-  distill/           symlinked final KD/MIL distillation scripts
-  benchmark/         final inference, v4 benchmark, bio-attention, and efficiency scripts/results
-  model/             final six-model code and local model symlink manifest
-  checkpoint/        local checkpoint manifest
-  docs/              hardware, deduplication, and reproduction notes
+  raw_data/          raw-source preparation utilities and small summaries
+  process_data/      dataset construction and FASTA-to-CSV utilities
+  processed_data/    dataset manifests and checked-in QC summaries
+  train/             training launchers
+  distill/           knowledge-distillation and MIL training entrypoints
+  benchmark/         inference, metrics, and benchmark scripts
+  model/             model code and model manifests
+  checkpoint/        selected-checkpoint manifest
+  docs/              user documentation
+  scripts/           one-command setup and reproduction helpers
 ```
 
-## Directory Roles
+## Quick Start
 
-- `raw_data/`: local raw-source index and source-preparation scripts; no raw IMGVR/Prodigal data is included.
-- `process_data/`: scripts that build the strict Realm-Rank v4 dataset and test suite.
-- `processed_data/realm_rank_v4/`: v4 QC summaries, manifests, and ignored local FASTA links.
-- `train/`: teacher training entrypoints and the user-facing six-model pipeline launcher.
-- `distill/`: user-facing KD/MIL distillation entrypoints, symlinked to canonical six-model code.
-- `benchmark/`: flash-attention inference, metrics, six-model benchmark, bio-attention, and efficiency evaluation.
-- `model/`: canonical six-model model/training/benchmark source code plus model manifests.
-- `checkpoint/`: manifest and ignored local indexes for the five selected final/staged checkpoints.
-- `docs/`: hardware, reproduction, deduplication, verification, and script inventory notes.
+The quick-start script verifies the release assets, extracts them into the
+expected folders, runs basic code checks, and launches a small benchmark smoke
+test. It will use the existing `vl` Conda environment when available.
 
-For script-level details, see `docs/script_inventory.md`.
+```bash
+git clone https://github.com/kola-official/GAMIL.git
+cd GAMIL
 
-## Environment Variables
+conda env create -f environment.yml
+conda activate gamil
 
-All runnable scripts are based on these roots and can be overridden:
+bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode smoke
+```
 
-- `GAMIL_ROOT`: defaults to this repository root.
-- `RAW_DATA_ROOT`: defaults to `raw_data/local_sources`.
-- `PROCESSED_DATA_ROOT`: defaults to `processed_data`.
-- `MODEL_ROOT`: defaults to model/checkpoint roots depending on script context.
-- `CHECKPOINT_ROOT`: defaults to `checkpoint/local_checkpoints`.
-- `OUTPUT_ROOT`: defaults to a local output/checkpoint directory.
-- `PYTHON_BIN`, `TORCHRUN_BIN`, `CUDA_VISIBLE_DEVICES`, `NPROC_PER_NODE`: launcher overrides.
+Use `--mode full` to run the full benchmark suite after the smoke test succeeds.
+The full run is GPU-oriented and may take substantially longer.
+If you want to force a different interpreter, pass `--python /path/to/python`.
 
-## Quick Checks
+## Release Assets
+
+Download all release files from the project release record before running the
+quick start:
+
+- Zenodo record: https://zenodo.org/records/20725522
+- DOI: https://doi.org/10.5281/zenodo.20725522
+
+| File | Purpose |
+| --- | --- |
+| `gamil_core_data_v1.tar.zst` | Training, validation, and test sequences plus tabular training data |
+| `gamil_euk_pro_benchmark_v1.tar.zst` | Fixed-length eukaryotic and prokaryotic benchmark FASTA files |
+| `gamil_model_weights_v1.tar.zst` | Base encoder, teacher models, and final GAMIL model weights |
+| `SHA256SUMS` | Checksums used by the quick-start script |
+
+Download with `wget`:
+
+```bash
+mkdir -p gamil_release_assets
+cd gamil_release_assets
+
+wget -O gamil_core_data_v1.tar.zst https://zenodo.org/records/20725522/files/gamil_core_data_v1.tar.zst?download=1
+wget -O gamil_euk_pro_benchmark_v1.tar.zst https://zenodo.org/records/20725522/files/gamil_euk_pro_benchmark_v1.tar.zst?download=1
+wget -O gamil_model_weights_v1.tar.zst https://zenodo.org/records/20725522/files/gamil_model_weights_v1.tar.zst?download=1
+wget -O SHA256SUMS https://zenodo.org/records/20725522/files/SHA256SUMS?download=1
+```
+
+Manual extraction is also supported:
+
+```bash
+tar --zstd -xf gamil_core_data_v1.tar.zst -C .
+tar --zstd -xf gamil_euk_pro_benchmark_v1.tar.zst -C .
+tar --zstd -xf gamil_model_weights_v1.tar.zst -C .
+```
+
+## Common Tasks
+
+Run only asset extraction and code checks:
+
+```bash
+bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode prepare
+```
+
+Run a smoke benchmark:
+
+```bash
+bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode smoke
+```
+
+Run the full benchmark:
+
+```bash
+bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode full
+```
+
+For training, distillation, hardware notes, and manual benchmark commands, see
+`docs/reproduction.md` and `docs/hardware.md`.
+
+## Environment
+
+The recommended environment is provided in `environment.yml`:
+
+```bash
+conda env create -f environment.yml
+conda activate gamil
+```
+
+Common environment variables:
+
+```bash
+export GAMIL_ROOT="$PWD"
+export PROCESSED_DATA_ROOT="$GAMIL_ROOT/processed_data"
+export CHECKPOINT_ROOT="$GAMIL_ROOT/checkpoint/local_checkpoints"
+export PYTHON_BIN=python
+export TORCHRUN_BIN=torchrun
+```
+
+## Validation
+
+After installing dependencies and extracting the release assets, run:
 
 ```bash
 python -m py_compile $(find raw_data process_data train benchmark model/code -type f -name '*.py')
-python process_data/scripts/build_realm_rank_dataset_v4.py --help
-python process_data/scripts/prepare_realm_rank_csv.py --help
-python process_data/scripts/build_realm_rank_test_v4.py --help
-python benchmark/scripts/run_viralm_flash_inference.py --help
-python benchmark/scripts/run_realm_rank_v4_six_model_benchmark.py --help
+bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode smoke
 ```
 
-See `docs/reproduction.md` for full command examples.
+The smoke test writes outputs under `outputs/quick_start/` by default.
+
+## Tested Environment
+
+The repository was validated on the following local environment:
+
+- OS: Linux 6.14.0-36-generic x86_64
+- CPU: 2 x Intel Xeon Gold 6226R
+- GPU: 2 x NVIDIA GeForce RTX 3090 (24 GB each)
+- NVIDIA driver: 570.169
+- Conda environment: `gamil-clean-test`
+- Python: 3.8.18
+- PyTorch: 2.0.1
+- CUDA runtime used by PyTorch: 11.8
+
+Validated workflows:
+
+- Fresh `conda env create -f environment.yml`
+- `quick_start.sh --mode prepare`
+- CPU smoke benchmark
+- GPU smoke benchmark on one RTX 3090
+
+## Troubleshooting
+
+- `ImportError: No module named 'einops'`: recreate the Conda environment from
+  `environment.yml` and do not mix it with a partial system Python install.
+- `conda env create` takes a long time: this file pins a full environment; the
+  first solve/install can be slow.
+- `CUDA initialization` driver warnings during `--help` or smoke runs: the
+  command can still succeed on CPU, but full GPU training needs a newer driver
+  that matches the installed PyTorch/CUDA build.
+- `Missing release archive`: verify that all three `.tar.zst` files and
+  `SHA256SUMS` are in the same directory passed to `--asset-dir`.
+
+## Citation
+
+If you use GAMIL in your work, cite the accompanying paper and the Zenodo
+release DOI for the data/model assets:
+
+- `10.5281/zenodo.20725522`
