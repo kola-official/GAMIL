@@ -1,1 +1,1 @@
-../code/realm_rank_v4_six_model/copy_euk_pro_references.py
+../code/gamil_six_model/copy_euk_pro_references.py

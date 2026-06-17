@@ -362,7 +362,7 @@ def get_mil_layer_count(state_dict: Dict[str, torch.Tensor]) -> int:
 def load_mil_model(model_dir: str, device: torch.device):
     gamil_root = Path(os.environ.get("GAMIL_ROOT", Path(__file__).resolve().parents[2])).resolve()
     mil_code_dir = Path(
-        os.environ.get("GAMIL_MODEL_CODE_DIR", gamil_root / "model" / "code" / "realm_rank_v4_six_model")
+        os.environ.get("GAMIL_MODEL_CODE_DIR", gamil_root / "model" / "code" / "gamil_six_model")
     ).resolve()
     if str(mil_code_dir) not in sys.path:
         sys.path.insert(0, str(mil_code_dir))

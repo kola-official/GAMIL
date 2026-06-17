@@ -1,0 +1,6 @@
+entry	expected_path	archive	use	github_upload
+realm_rank_train_fasta	processed_data/realm_rank/train.fasta.gz	gamil_core_data_v1.tar.zst	final strict train FASTA	no
+realm_rank_dev_fasta	processed_data/realm_rank/dev.fasta.gz	gamil_core_data_v1.tar.zst	final strict dev FASTA	no
+realm_rank_test_fasta	processed_data/realm_rank/test.fasta.gz	gamil_core_data_v1.tar.zst	final strict held-out test FASTA	no
+realm_rank_train_csv	processed_data/realm_rank/train_csv	gamil_core_data_v1.tar.zst	train/dev CSV root	no
+realm_rank_benchmark_suite	processed_data/realm_rank_benchmark	gamil_euk_pro_benchmark_v1.tar.zst	fixed-length euk/pro benchmark FASTA suite	no

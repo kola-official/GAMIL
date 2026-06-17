@@ -1,46 +1,83 @@
-# Reproduction
+# Reproduction Guide
 
-Run commands from the repository root unless noted otherwise.
+This guide describes how to reproduce the released benchmarks from a fresh
+checkout. Commands are run from the repository root.
 
-## Environment
-
-`environment.yml` is pinned from the current local `vl` Conda environment with package versions and pip pins, but without the machine-local `prefix`.
+## 1. Create The Environment
 
 ```bash
 conda env create -f environment.yml
 conda activate gamil
 ```
 
-## Data Build
+If Conda is not available, create an equivalent Python environment with the
+packages listed in `environment.yml`.
 
-```bash
-python process_data/scripts/build_realm_rank_dataset_v4.py --help
-python process_data/scripts/build_realm_rank_dataset_v4.py --input-root "$RAW_DATA_ROOT" --output-dir "$PROCESSED_DATA_ROOT/realm_rank_v4"
-python process_data/scripts/prepare_realm_rank_csv.py --help
-python process_data/scripts/prepare_realm_rank_csv.py --input-fasta processed_data/realm_rank_v4/train.fasta.gz --dev-fasta processed_data/realm_rank_v4/dev.fasta.gz --output-dir processed_data/realm_rank_v4/train_csv
-python process_data/scripts/build_realm_rank_test_v4.py --help
+## 2. Download The Release Assets
+
+Place the release files in one directory:
+
+```text
+gamil_release_assets/
+  gamil_core_data_v1.tar.zst
+  gamil_euk_pro_benchmark_v1.tar.zst
+  gamil_model_weights_v1.tar.zst
+  SHA256SUMS
 ```
 
-## Train And Distill
+The quick-start script verifies the checksums and extracts the archives into the
+repository. If the intended interpreter is not the active `python`, pass it with
+`--python /path/to/python`.
+When available, it will use the existing `vl` Conda environment automatically.
+
+## 3. Run The Smoke Test
 
 ```bash
-bash train/scripts/train.sh
-bash train/scripts/run_six_model_pipeline.sh
-python distill/scripts/train_6l_meanpool_kd.py --help
-python distill/scripts/train_6l_gated_mil_kd.py --help
+bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode smoke
 ```
 
-## Benchmark
+The smoke test runs on a small subset of records and is intended to confirm that
+the environment, data, and weights are connected correctly.
+
+## 4. Run The Full Benchmark
 
 ```bash
-python benchmark/scripts/run_viralm_flash_inference.py --help
-python benchmark/scripts/metrics.py --help
-python benchmark/scripts/run_realm_rank_v4_six_model_benchmark.py --help
-python benchmark/scripts/run_euk_pro_v4_six_model_benchmark.py --help
-python benchmark/scripts/run_v4_bio_attention_analysis.py --help
-bash benchmark/scripts/run_viralm_r_gated_mil_single.sh
+bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode full
 ```
 
-The checked-in result files under `processed_data/realm_rank_v4/results` and `benchmark/results` are summaries only. Full prediction tables, FASTA files, tokenized caches, and model weights are resolved through manifests and ignored symlinks.
+The full benchmark writes results under `outputs/quick_start/` unless
+`--output-dir` is provided. Use a CUDA-capable machine for practical runtime.
 
-The checkpoint manifest indexes five local final/staged models. When a source directory contains multiple checkpoints, `checkpoint/local_checkpoints/<entry>/` keeps only the selected best checkpoint or best MIL weight.
+## 5. Train Or Distill Models
+
+The released weights are sufficient for benchmark reproduction. To run the
+training pipeline from the prepared data:
+
+```bash
+CUDA_VISIBLE_DEVICES=0,1 NPROC_PER_NODE=2 train/scripts/run_six_model_pipeline.sh
+```
+
+For a small validation run:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 NPROC_PER_NODE=1 RUN_IN_TMUX=0 SMOKE_TEST=1 \
+  train/scripts/run_six_model_pipeline.sh
+```
+
+Main environment overrides:
+
+```bash
+export GAMIL_ROOT="$PWD"
+export PROCESSED_DATA_ROOT="$GAMIL_ROOT/processed_data"
+export CHECKPOINT_ROOT="$GAMIL_ROOT/checkpoint/local_checkpoints"
+export OUTPUT_ROOT="$CHECKPOINT_ROOT/gamil_six_model"
+export PYTHON_BIN=python
+export TORCHRUN_BIN=torchrun
+```
+
+## 6. Outputs
+
+The benchmark scripts write predictions, metric tables, and summary JSON files
+to the selected output directory. Checked-in files under `benchmark/results/`
+are compact summaries for reference; large prediction tables are generated
+locally.

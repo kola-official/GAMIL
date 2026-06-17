@@ -11,9 +11,9 @@
     "max_cpu_seconds": 139.45000000000002,
     "speed_vs_viralm_r_x": 1.0,
     "gpu_vs_viralm_r_x": 1.0,
-    "run_info_json": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_mil_20260608_134617/results/viralm-r/run_info_efficiency.json",
-    "result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_mil_20260608_134617/results/viralm-r/result_efficiency.csv",
-    "fragment_result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_mil_20260608_134617/results/viralm-r/fragment_result_efficiency.csv"
+    "run_info_json": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_mil_20260608_134617/results/viralm-r/run_info_efficiency.json",
+    "result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_mil_20260608_134617/results/viralm-r/result_efficiency.csv",
+    "fragment_result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_mil_20260608_134617/results/viralm-r/fragment_result_efficiency.csv"
   },
   {
     "model": "viralm-r-12l-gated-mil",
@@ -27,9 +27,9 @@
     "max_cpu_seconds": 89.6,
     "speed_vs_viralm_r_x": 0.686469482399368,
     "gpu_vs_viralm_r_x": 0.9493554327808471,
-    "run_info_json": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_same_mem_c12_20260608_143200/results/r12_same_mem_b64_c12/run_info_efficiency.json",
-    "result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_same_mem_c12_20260608_143200/results/r12_same_mem_b64_c12/result_efficiency.csv",
-    "fragment_result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_same_mem_c12_20260608_143200/results/r12_same_mem_b64_c12/fragment_result_efficiency.csv"
+    "run_info_json": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_same_mem_c12_20260608_143200/results/r12_same_mem_b64_c12/run_info_efficiency.json",
+    "result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_same_mem_c12_20260608_143200/results/r12_same_mem_b64_c12/result_efficiency.csv",
+    "fragment_result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_same_mem_c12_20260608_143200/results/r12_same_mem_b64_c12/fragment_result_efficiency.csv"
   },
   {
     "model": "viralm-r-12l-gated-mil",
@@ -43,9 +43,9 @@
     "max_cpu_seconds": 86.92,
     "speed_vs_viralm_r_x": 0.7697184846698124,
     "gpu_vs_viralm_r_x": 1.069060773480663,
-    "run_info_json": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_same_mem_probe_20260608_143013/results/r12_same_mem_b64_c16/run_info_efficiency.json",
-    "result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_same_mem_probe_20260608_143013/results/r12_same_mem_b64_c16/result_efficiency.csv",
-    "fragment_result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_same_mem_probe_20260608_143013/results/r12_same_mem_b64_c16/fragment_result_efficiency.csv"
+    "run_info_json": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_same_mem_probe_20260608_143013/results/r12_same_mem_b64_c16/run_info_efficiency.json",
+    "result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_same_mem_probe_20260608_143013/results/r12_same_mem_b64_c16/result_efficiency.csv",
+    "fragment_result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_same_mem_probe_20260608_143013/results/r12_same_mem_b64_c16/fragment_result_efficiency.csv"
   },
   {
     "model": "viralm-r-12l-gated-mil",
@@ -59,9 +59,9 @@
     "max_cpu_seconds": 83.11,
     "speed_vs_viralm_r_x": 0.7345902362993957,
     "gpu_vs_viralm_r_x": 11.01657458563536,
-    "run_info_json": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r12_max_b144_c0/run_info_efficiency.json",
-    "result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r12_max_b144_c0/result_efficiency.csv",
-    "fragment_result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r12_max_b144_c0/fragment_result_efficiency.csv"
+    "run_info_json": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r12_max_b144_c0/run_info_efficiency.json",
+    "result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r12_max_b144_c0/result_efficiency.csv",
+    "fragment_result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r12_max_b144_c0/fragment_result_efficiency.csv"
   },
   {
     "model": "viralm-r-6l-gated-mil",
@@ -75,9 +75,9 @@
     "max_cpu_seconds": 60.56,
     "speed_vs_viralm_r_x": 1.0867019436916292,
     "gpu_vs_viralm_r_x": 0.8443830570902394,
-    "run_info_json": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_final_20260608_143359/results/r6_same_mem_b64_c12/run_info_efficiency.json",
-    "result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_final_20260608_143359/results/r6_same_mem_b64_c12/result_efficiency.csv",
-    "fragment_result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_final_20260608_143359/results/r6_same_mem_b64_c12/fragment_result_efficiency.csv"
+    "run_info_json": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_final_20260608_143359/results/r6_same_mem_b64_c12/run_info_efficiency.json",
+    "result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_final_20260608_143359/results/r6_same_mem_b64_c12/result_efficiency.csv",
+    "fragment_result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_final_20260608_143359/results/r6_same_mem_b64_c12/fragment_result_efficiency.csv"
   },
   {
     "model": "viralm-r-6l-gated-mil",
@@ -91,9 +91,9 @@
     "max_cpu_seconds": 56.79,
     "speed_vs_viralm_r_x": 1.174271698819757,
     "gpu_vs_viralm_r_x": 2.5285451197053406,
-    "run_info_json": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/mil_fastpath_20260608_141103/results/viralm-r-6l-gated-mil/run_info_efficiency.json",
-    "result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/mil_fastpath_20260608_141103/results/viralm-r-6l-gated-mil/result_efficiency.csv",
-    "fragment_result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/mil_fastpath_20260608_141103/results/viralm-r-6l-gated-mil/fragment_result_efficiency.csv"
+    "run_info_json": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/mil_fastpath_20260608_141103/results/viralm-r-6l-gated-mil/run_info_efficiency.json",
+    "result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/mil_fastpath_20260608_141103/results/viralm-r-6l-gated-mil/result_efficiency.csv",
+    "fragment_result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/mil_fastpath_20260608_141103/results/viralm-r-6l-gated-mil/fragment_result_efficiency.csv"
   },
   {
     "model": "viralm-r-6l-gated-mil",
@@ -107,8 +107,8 @@
     "max_cpu_seconds": 57.96,
     "speed_vs_viralm_r_x": 0.9624977553935588,
     "gpu_vs_viralm_r_x": 11.099447513812155,
-    "run_info_json": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r6_max_b144_c0/run_info_efficiency.json",
-    "result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r6_max_b144_c0/result_efficiency.csv",
-    "fragment_result_csv": "${LOCAL_USER_ROOT}/hybriDNA/paper/experiment/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r6_max_b144_c0/fragment_result_efficiency.csv"
+    "run_info_json": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r6_max_b144_c0/run_info_efficiency.json",
+    "result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r6_max_b144_c0/result_efficiency.csv",
+    "fragment_result_csv": "${GAMIL_ASSET_ROOT}/benchmark/efficiency/runs/viralm_r_gated_tuning_max_b144_20260608_144027/results/r6_max_b144_c0/fragment_result_efficiency.csv"
   }
 ]

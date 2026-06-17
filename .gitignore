@@ -10,12 +10,12 @@ work*/
 # Local-only data and model indexes
 raw_data/local_sources/
 benchmark/local_data/
-processed_data/realm_rank_v4/local/
-processed_data/realm_rank_v4/*.fasta
-processed_data/realm_rank_v4/*.fasta.gz
-processed_data/realm_rank_v4/train_csv/
-processed_data/realm_rank_v4/train_csv_smoke/
-processed_data/realm_rank_test_v4
+processed_data/realm_rank/local/
+processed_data/realm_rank/*.fasta
+processed_data/realm_rank/*.fasta.gz
+processed_data/realm_rank/train_csv/
+processed_data/realm_rank/train_csv_smoke/
+processed_data/realm_rank_benchmark
 model/local_models/
 checkpoint/local_checkpoints/
 
@@ -43,7 +43,7 @@ checkpoint/local_checkpoints/
 !environment.yml
 !docs/**
 !raw_data/manifest.tsv
-!processed_data/realm_rank_v4/manifest.tsv
+!processed_data/realm_rank/manifest.tsv
 !model/manifest.tsv
 !checkpoint/manifest.tsv
 !**/results/**

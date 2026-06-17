@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-06-07 23:31:00",
+  "ga_model_dir": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/models/viralm_r_12l_gated_mil",
+  "ga_predictions": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark/test_predictions/viralm_r_12l_gated_mil.csv",
+  "mp_predictions": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark/test_predictions/viralm_r.csv",
+  "test_fasta": "${GAMIL_ASSET_ROOT}/processed_data/realm_rank/test.fasta.gz",
+  "threads": 56,
+  "threshold": 0.5
+}

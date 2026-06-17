@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "title": "GAMIL release assets",
+    "upload_type": "dataset",
+    "description": "Release archives for the GAMIL repository, including processed benchmark data, model weights, and SHA256 checksums.",
+    "creators": [
+      {
+        "name": "snliu",
+        "affiliation": "Shanghai Jiao Tong University"
+      }
+    ],
+    "access_right": "open",
+    "license": "CC-BY-4.0",
+    "keywords": [
+      "viral genomics",
+      "deep learning",
+      "sequence classification"
+    ]
+  }
+}

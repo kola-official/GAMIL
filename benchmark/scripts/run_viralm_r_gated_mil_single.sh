@@ -40,8 +40,8 @@ MODEL_NAMES=(
 MODEL_DIRS=(
   "${MODEL_ROOT}/staged_models/viralm-o"
   "${MODEL_ROOT}/staged_models/viralm-r"
-  "${MODEL_ROOT}/viralm_r_v4_final_12l_gated_mil"
-  "${MODEL_ROOT}/viralm_r_v4_final_6l_gated_mil_kd"
+  "${MODEL_ROOT}/viralm_r_12l_gated_mil"
+  "${MODEL_ROOT}/viralm_r_6l_gated_mil_kd"
   "${MODEL_ROOT}/viralm_o_6l_gated_mil_kd"
 )
 MODEL_IS_MIL=(0 0 1 1 1)

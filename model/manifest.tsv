@@ -1,10 +1,10 @@
-entry	local_link	source_path	use	github_upload
-bert2_flash_attn2_patch	model/local_models/bert2_flash_attn2_patch	/share/home/user/snliu/hybriDNA/viralm-r/model/bert2_flash_attn2_patch	base tokenizer/backbone reference	no
-viralm_o_teacher	model/local_models/staged_models/viralm-o	/share/home/user/snliu/hybriDNA/viralm-r/eval/eval_euk_pro_o_vs_r/work_v4/staged_models/viralm-o	staged original teacher	no
-viralm_r_v4_final_teacher	model/local_models/staged_models/viralm-r	/share/home/user/snliu/hybriDNA/viralm-r/eval/eval_euk_pro_o_vs_r/work_v4/staged_models/viralm-r	staged Realm-Rank v4 teacher	no
-viralm_o_6l_meanpool_kd	model/local_models/viralm_o_6l_meanpool_kd	/share/home/user/snliu/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_o_6l_meanpool_kd	final KD mean-pool student	no
-viralm_r_v4_final_6l_meanpool_kd	model/local_models/viralm_r_v4_final_6l_meanpool_kd	/share/home/user/snliu/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_r_v4_final_6l_meanpool_kd	final KD mean-pool student	no
-viralm_o_6l_gated_mil_kd	model/local_models/viralm_o_6l_gated_mil_kd	/share/home/user/snliu/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_o_6l_gated_mil_kd	final KD gated MIL student	no
-viralm_r_v4_final_6l_gated_mil_kd	model/local_models/viralm_r_v4_final_6l_gated_mil_kd	/share/home/user/snliu/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_r_v4_final_6l_gated_mil_kd	final KD gated MIL student	no
-viralm_o_12l_gated_mil	model/local_models/viralm_o_12l_gated_mil	/share/home/user/snliu/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_o_12l_gated_mil	final supervised gated MIL teacher variant	no
-viralm_r_v4_final_12l_gated_mil	model/local_models/viralm_r_v4_final_12l_gated_mil	/share/home/user/snliu/hybriDNA/viralm-r/checkpoint/realm_rank_v4_six_model/models/viralm_r_v4_final_12l_gated_mil	final supervised gated MIL teacher variant	no
+entry	expected_path	archive	use	github_upload
+bert2_flash_attn2_patch	model/local_models/bert2_flash_attn2_patch	gamil_model_weights_v1.tar.zst	base tokenizer/backbone reference	no
+viralm_o_teacher	model/local_models/staged_models/viralm-o	gamil_model_weights_v1.tar.zst	staged original teacher	no
+viralm_r_teacher	model/local_models/staged_models/viralm-r	gamil_model_weights_v1.tar.zst	staged Realm-Rank teacher	no
+viralm_o_6l_meanpool_kd	checkpoint/local_checkpoints/gamil_six_model/models/viralm_o_6l_meanpool_kd	gamil_model_weights_v1.tar.zst	final KD mean-pool student	no
+viralm_r_6l_meanpool_kd	checkpoint/local_checkpoints/gamil_six_model/models/viralm_r_6l_meanpool_kd	gamil_model_weights_v1.tar.zst	final KD mean-pool student	no
+viralm_o_6l_gated_mil_kd	checkpoint/local_checkpoints/gamil_six_model/models/viralm_o_6l_gated_mil_kd	gamil_model_weights_v1.tar.zst	final KD gated MIL student	no
+viralm_r_6l_gated_mil_kd	checkpoint/local_checkpoints/gamil_six_model/models/viralm_r_6l_gated_mil_kd	gamil_model_weights_v1.tar.zst	final KD gated MIL student	no
+viralm_o_12l_gated_mil	checkpoint/local_checkpoints/gamil_six_model/models/viralm_o_12l_gated_mil	gamil_model_weights_v1.tar.zst	final supervised gated MIL teacher variant	no
+viralm_r_12l_gated_mil	checkpoint/local_checkpoints/gamil_six_model/models/viralm_r_12l_gated_mil	gamil_model_weights_v1.tar.zst	final supervised gated MIL teacher variant	no

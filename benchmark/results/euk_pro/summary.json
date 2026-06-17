@@ -1,0 +1,14 @@
+{
+  "aggregation": "original FASTA record for sequence metrics; internal fragments are 2000 bp with >=500 bp tail retained",
+  "data_root": "${GAMIL_ASSET_ROOT}/processed_data/realm_rank_benchmark",
+  "fragment_metric_rows": 72,
+  "fragment_prediction_rows": 713664,
+  "generated_at": "2026-06-07 11:38:50",
+  "output_dir": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark_euk_pro",
+  "sequence_metric_rows": 72,
+  "sequence_prediction_rows": 198240,
+  "source_part_dirs": [
+    "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark_euk_pro_parts/o_models",
+    "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark_euk_pro_parts/r_models"
+  ]
+}

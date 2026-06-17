@@ -1,0 +1,60 @@
+{
+  "aggregation": "source_id=genome",
+  "counts": {
+    "fragments": 40930,
+    "genomes": 4085,
+    "nonviral_fragments": 20438,
+    "viral_fragments": 20492
+  },
+  "model_count": 8,
+  "models": [
+    {
+      "model_dir": "${GAMIL_ASSET_ROOT}/eval/eval_euk_pro_o_vs_r/work/staged_models/viralm-o",
+      "model_kind": "meanpool",
+      "model_name": "viralm_o"
+    },
+    {
+      "model_dir": "${GAMIL_ASSET_ROOT}/eval/eval_euk_pro_o_vs_r/work/staged_models/viralm-r",
+      "model_kind": "meanpool",
+      "model_name": "viralm_r"
+    },
+    {
+      "model_dir": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/models/viralm_o_6l_meanpool_kd",
+      "model_kind": "meanpool",
+      "model_name": "viralm_o_6l_meanpool_kd"
+    },
+    {
+      "model_dir": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/models/viralm_r_6l_meanpool_kd",
+      "model_kind": "meanpool",
+      "model_name": "viralm_r_6l_meanpool_kd"
+    },
+    {
+      "model_dir": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/models/viralm_o_6l_gated_mil_kd",
+      "model_kind": "mil",
+      "model_name": "viralm_o_6l_gated_mil_kd"
+    },
+    {
+      "model_dir": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/models/viralm_r_6l_gated_mil_kd",
+      "model_kind": "mil",
+      "model_name": "viralm_r_6l_gated_mil_kd"
+    },
+    {
+      "model_dir": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/models/viralm_o_12l_gated_mil",
+      "model_kind": "mil",
+      "model_name": "viralm_o_12l_gated_mil"
+    },
+    {
+      "model_dir": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/models/viralm_r_12l_gated_mil",
+      "model_kind": "mil",
+      "model_name": "viralm_r_12l_gated_mil"
+    }
+  ],
+  "outputs": {
+    "test_metrics_by_label_group": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark/test_metrics_by_label_group.csv",
+    "test_metrics_by_model": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark/test_metrics_by_model.csv",
+    "test_metrics_by_source": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark/test_metrics_by_source.csv",
+    "test_predictions": "${GAMIL_ASSET_ROOT}/checkpoint/gamil_six_model/benchmark/test_predictions"
+  },
+  "test_fasta": "${GAMIL_ASSET_ROOT}/processed_data/realm_rank/test.fasta.gz",
+  "threshold": 0.5
+}

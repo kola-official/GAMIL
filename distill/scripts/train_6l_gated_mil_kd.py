@@ -1,1 +1,1 @@
-../../model/code/realm_rank_v4_six_model/train_gated_mil_kd.py
+../../model/code/gamil_six_model/train_gated_mil_kd.py
