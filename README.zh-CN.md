@@ -97,6 +97,62 @@ bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode ful
 训练、蒸馏、硬件配置和手动 benchmark 命令见 `docs/reproduction.md` 与
 `docs/hardware.md`。
 
+## ViroBench 扩展
+
+本仓库新增了 ViroBench 分类扩展，用于比较 ViroBench 默认的窗口均值
+聚合、post hoc 聚合探针、SeqMean 以及 GAMIL gated-attention 聚合：
+
+```bash
+python scripts/run_virobench_gamil.py \
+  --dataset-name ALL-host-genus \
+  --model-name DNABERT2-virobench \
+  --model-dir external/model_weight/DNABERT-2-117M \
+  --window-len 2048 \
+  --train-num-windows 2 \
+  --eval-num-windows -1 \
+  --epochs 80 \
+  --patience 12 \
+  --output-dir results/virobench_gamil
+```
+
+相关脚本包括：
+
+- `scripts/run_virobench_gamil.py`
+- `scripts/run_virobench_gamil_core4.sh`
+- `scripts/run_virobench_models_234.sh`
+- `scripts/summarize_virobench_gamil.py`
+- `scripts/diagnose_virobench_gamil.py`
+
+ViroBench 源码、分类数据和对比 backbone 权重都是公开上游资产，因此
+不随本仓库打包，也不重复上传到 Zenodo。请在本地准备：
+
+```bash
+mkdir -p external
+git clone https://github.com/SII-AGI4S/ViroBench external/ViroBench
+
+python -m pip install -U "huggingface_hub[cli]"
+huggingface-cli download YDXX/ViroBench \
+  --repo-type dataset \
+  --local-dir external/ViroBench/hf_data \
+  --local-dir-use-symlinks False
+
+mkdir -p external/ViroBench/data/all_viral/cls_data
+rsync -a external/ViroBench/hf_data/Classification/ \
+  external/ViroBench/data/all_viral/cls_data/
+```
+
+runner 默认使用以下本地路径：
+
+| 模型 | 公开来源 | 本地路径 |
+| --- | --- | --- |
+| DNABERT-2 | `zhihan1996/DNABERT-2-117M` | `external/model_weight/DNABERT-2-117M` |
+| LucaVirus | `LucaGroup/LucaVirus-default-step3.8M` | `external/model_weight/LucaVirus-default-step3.8M` |
+| ViroHyena | `YDXX/ViroHyena-253m` | `external/ViroBench/pretrain/hyena-dna/ViroHyena-253m` |
+| OmniReg-GPT | `wawpaopao/OmniReg-GPT` 及其公开权重/tokenizer | `external/official/OmniReg-GPT` 与 `external/model_weight/OmniReg-GPT` |
+
+完整数据布局、模型下载命令、smoke test 和三随机种子运行示例见
+`docs/virobench_gamil_extension.md`。
+
 ## 环境
 
 推荐使用 `environment.yml` 创建环境：

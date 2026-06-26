@@ -18,6 +18,12 @@ processed_data/realm_rank/train_csv_smoke/
 processed_data/realm_rank_benchmark
 model/local_models/
 checkpoint/local_checkpoints/
+external/ViroBench/
+external/ViroBench_modelscope_test/
+external/*.tgz
+external/model_weight/
+external/official/
+results/virobench_gamil*/
 
 # Large generated artifacts
 *.pt
@@ -47,3 +53,17 @@ checkpoint/local_checkpoints/
 !model/manifest.tsv
 !checkpoint/manifest.tsv
 !**/results/**
+
+# Local-only ViroBench runs and launch state
+results/virobench_gamil*/
+results/virobench_gamil*
+results/virobench_models_234*/
+results/virobench_models_234*
+results/logs_234/
+results/runtime_logs/
+results/runtime_locks/
+scripts/runtime/
+*.bak_before_*
+*.bak-before-*
+*.fasttok-active-before-*
+*.pid

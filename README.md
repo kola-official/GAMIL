@@ -102,6 +102,64 @@ bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode ful
 For training, distillation, hardware notes, and manual benchmark commands, see
 `docs/reproduction.md` and `docs/hardware.md`.
 
+## ViroBench Extension
+
+This repository also includes a ViroBench classification extension that compares
+ViroBench's default window-mean aggregation with post hoc aggregation probes,
+SeqMean, and GAMIL gated-attention aggregation:
+
+```bash
+python scripts/run_virobench_gamil.py \
+  --dataset-name ALL-host-genus \
+  --model-name DNABERT2-virobench \
+  --model-dir external/model_weight/DNABERT-2-117M \
+  --window-len 2048 \
+  --train-num-windows 2 \
+  --eval-num-windows -1 \
+  --epochs 80 \
+  --patience 12 \
+  --output-dir results/virobench_gamil
+```
+
+Reusable helpers are provided in:
+
+- `scripts/run_virobench_gamil.py`
+- `scripts/run_virobench_gamil_core4.sh`
+- `scripts/run_virobench_models_234.sh`
+- `scripts/summarize_virobench_gamil.py`
+- `scripts/diagnose_virobench_gamil.py`
+
+The ViroBench source, classification data, and compared backbone weights are
+public upstream assets, so they are not bundled in this repository or uploaded
+again to Zenodo. Prepare them locally with:
+
+```bash
+mkdir -p external
+git clone https://github.com/SII-AGI4S/ViroBench external/ViroBench
+
+python -m pip install -U "huggingface_hub[cli]"
+huggingface-cli download YDXX/ViroBench \
+  --repo-type dataset \
+  --local-dir external/ViroBench/hf_data \
+  --local-dir-use-symlinks False
+
+mkdir -p external/ViroBench/data/all_viral/cls_data
+rsync -a external/ViroBench/hf_data/Classification/ \
+  external/ViroBench/data/all_viral/cls_data/
+```
+
+Default model locations used by the runner:
+
+| Model | Public source | Local path |
+| --- | --- | --- |
+| DNABERT-2 | `zhihan1996/DNABERT-2-117M` | `external/model_weight/DNABERT-2-117M` |
+| LucaVirus | `LucaGroup/LucaVirus-default-step3.8M` | `external/model_weight/LucaVirus-default-step3.8M` |
+| ViroHyena | `YDXX/ViroHyena-253m` | `external/ViroBench/pretrain/hyena-dna/ViroHyena-253m` |
+| OmniReg-GPT | `wawpaopao/OmniReg-GPT` plus public weights/tokenizer | `external/official/OmniReg-GPT` and `external/model_weight/OmniReg-GPT` |
+
+See `docs/virobench_gamil_extension.md` for the full data layout, model
+download commands, smoke tests, and three-seed run examples.
+
 ## Environment
 
 The recommended environment is provided in `environment.yml`:
