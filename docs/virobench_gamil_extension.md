@@ -4,7 +4,7 @@ This extension adds aggregation-focused classification experiments for ViroBench
 
 ## What It Tests
 
-The experiment compares six sequence-level aggregation strategies on ViroBench classification tasks:
+The experiment compares five sequence-level aggregation strategies on ViroBench classification tasks:
 
 | Method | Input | Aggregation | Purpose |
 |---|---|---|---|
@@ -12,7 +12,6 @@ The experiment compares six sequence-level aggregation strategies on ViroBench c
 | `PostHoc-Quantile` | window probabilities | per-class high quantile | Diagnostic probe mirroring the original GAMIL quantile experiment. |
 | `PostHoc-NoisyOR` | window probabilities | per-class noisy-OR | Diagnostic probe for strong localized evidence. |
 | `PostHoc-LogReg` | window probability summaries | logistic regression | Diagnostic probe for whether window-score distributions contain information beyond the mean. |
-| `SeqMean` | window embeddings | mean embedding + sequence MLP | Controls for the benefit of sequence-level representation learning. |
 | `GAMIL` | window embeddings | gated attention + sequence MLP | Main learnable aggregation method. |
 
 Taxonomy tasks are handled as five parallel multiclass heads: `kingdom`, `phylum`, `class`, `order`, and `family`.
@@ -119,7 +118,7 @@ export OMNIREG_ASSET_DIR=/path/to/OmniReg-GPT-assets
 
 ## Smoke Test
 
-Use the smallest feasible task first. This command checks data loading, embedding extraction, window MLP, post hoc probes, SeqMean, and GAMIL:
+Use the smallest feasible task first. This command checks data loading, embedding extraction, window MLP, post hoc probes, and GAMIL:
 
 ```bash
 $PY scripts/run_virobench_gamil.py \
@@ -216,11 +215,9 @@ bash scripts/run_virobench_models_234.sh
 Each run writes:
 
 ```text
-summary.json                    # metrics for all six methods
+summary.json                    # metrics for all reported methods
 window_mlp_best.pt              # VB-default window-level MLP
 window_logits_test.npz          # raw test window logits and sequence groups
-seqmean_best.pt                 # SeqMean sequence-level head
-seqmean_test_predictions.npz
 gamil_best.pt                   # GAMIL sequence-level head
 gamil_test_predictions.npz
 gamil_test_attention.pt         # attention weights by sequence group
@@ -231,8 +228,6 @@ Post hoc methods are diagnostics. They should be reported as evidence that windo
 
 ## Interpretation Guardrails
 
-- `GAMIL > SeqMean > PostHoc-LogReg > VB-Default`: supports gated embedding-level aggregation as a distinct contribution.
-- `GAMIL ~= SeqMean > VB-Default`: supports sequence-level representation learning, but not a strong gated-attention-specific claim.
 - `PostHoc-LogReg ~= GAMIL`: suggests most gain is already present in window-score distributions; frame GAMIL as deployable and diagnostic rather than uniquely stronger.
 - No claim should be made about ViroBench generation tasks.
 - Attention weights are aggregation diagnostics, not validated functional annotations.

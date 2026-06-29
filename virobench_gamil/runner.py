@@ -15,7 +15,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset, TensorDataset
 
-from .heads import GatedMILHead, MultiTaskMLP, SeqMeanHead
+from .heads import GatedMILHead, MultiTaskMLP
 from .metrics import compute_multiclass_metrics, summarize_task_metrics
 from .posthoc import evaluate_window_posthoc
 
@@ -565,9 +565,7 @@ def train_bag_head(
     attention_dim: int,
 ) -> Dict[str, Any]:
     torch.manual_seed(seed)
-    if method == "SeqMean":
-        model = SeqMeanHead(train["feats"].shape[1], task_dims).to(device)
-    elif method == "GAMIL":
+    if method == "GAMIL":
         model = GatedMILHead(train["feats"].shape[1], task_dims, attention_dim=attention_dim).to(device)
     else:
         raise ValueError(method)
@@ -736,13 +734,6 @@ def run(args: argparse.Namespace) -> Dict[str, Any]:
     summary["methods"].update(posthoc)
     summary["window_mlp"] = window_train_meta
 
-    if args.methods in {"all", "seqmean"}:
-        summary["methods"]["SeqMean"] = train_bag_head(
-            "SeqMean", splits["train"], splits["val"], splits["test"],
-            task_names, task_dims, output_dir,
-            args.epochs, args.bag_batch_size, args.lr, args.patience, args.seed, device,
-            args.attention_dim,
-        )["metrics"]
     if args.methods in {"all", "gamil"}:
         summary["methods"]["GAMIL"] = train_bag_head(
             "GAMIL", splits["train"], splits["val"], splits["test"],
@@ -788,7 +779,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--attention-dim", type=int, default=256)
     p.add_argument("--quantile", type=float, default=0.95)
     p.add_argument("--logreg-c-grid", default="0.1,0.3,1.0,3.0")
-    p.add_argument("--methods", choices=["all", "seqmean", "gamil", "posthoc"], default="all")
+    p.add_argument("--methods", choices=["all", "gamil", "posthoc"], default="all")
     p.add_argument("--no-skip-existing", action="store_true", help="Recompute even when summary.json already exists.")
     p.add_argument("--device", default=None)
     return p

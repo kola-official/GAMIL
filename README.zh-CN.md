@@ -100,7 +100,7 @@ bash scripts/quick_start.sh --asset-dir /path/to/gamil_release_assets --mode ful
 ## ViroBench 扩展
 
 本仓库新增了 ViroBench 分类扩展，用于比较 ViroBench 默认的窗口均值
-聚合、post hoc 聚合探针、SeqMean 以及 GAMIL gated-attention 聚合：
+聚合、post hoc 聚合探针以及 GAMIL gated-attention 聚合：
 
 ```bash
 python scripts/run_virobench_gamil.py \

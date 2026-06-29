@@ -106,7 +106,7 @@ For training, distillation, hardware notes, and manual benchmark commands, see
 
 This repository also includes a ViroBench classification extension that compares
 ViroBench's default window-mean aggregation with post hoc aggregation probes,
-SeqMean, and GAMIL gated-attention aggregation:
+and GAMIL gated-attention aggregation:
 
 ```bash
 python scripts/run_virobench_gamil.py \

@@ -40,26 +40,6 @@ class MultiTaskMLP(nn.Module):
         return {name: self.heads[name](x) for name in self.task_names}
 
 
-class SeqMeanHead(nn.Module):
-    def __init__(self, input_dim: int, task_dims: Mapping[str, int], dropout: float = 0.2):
-        super().__init__()
-        self.classifier = MultiTaskMLP(input_dim, task_dims, dropout=dropout)
-
-    def forward(
-        self,
-        windows: torch.Tensor,
-        mask: torch.Tensor,
-        return_attention: bool = False,
-    ):
-        mask_f = mask.to(windows.dtype).unsqueeze(-1)
-        pooled = (windows * mask_f).sum(dim=1) / mask_f.sum(dim=1).clamp_min(1.0)
-        logits = self.classifier(pooled)
-        if return_attention:
-            weights = mask_f.squeeze(-1) / mask_f.squeeze(-1).sum(dim=1, keepdim=True).clamp_min(1.0)
-            return logits, weights
-        return logits
-
-
 class GatedMILHead(nn.Module):
     def __init__(
         self,
