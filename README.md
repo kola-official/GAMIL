@@ -8,6 +8,11 @@ and trained weights are distributed separately as release assets.
 
 Chinese documentation is available in `README.zh-CN.md`.
 
+## License
+
+GAMIL is released under the GNU General Public License v3.0. See
+`LICENSE` for the full license text.
+
 ## Repository Layout
 
 ```text

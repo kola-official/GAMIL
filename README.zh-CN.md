@@ -7,6 +7,11 @@ transformer 序列编码器和 gated-attention multiple-instance learning。
 
 英文说明见 `README.md`。
 
+## 许可证
+
+GAMIL 使用 GNU General Public License v3.0 发布。完整许可证文本见
+`LICENSE`。
+
 ## 仓库结构
 
 ```text
